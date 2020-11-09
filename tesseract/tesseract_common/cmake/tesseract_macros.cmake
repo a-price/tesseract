@@ -39,7 +39,7 @@ macro(tesseract_target_compile_options target)
 
   list(FIND CMAKE_CXX_COMPILE_FEATURES cxx_std_14 CXX_FEATURE_FOUND)
   if (NOT TESSERACT_ENABLE_TESTING AND NOT TESSERACT_ENABLE_TESTING_ALL)
-    set(warning_flags -Wall -Wextra -Wconversion -Wsign-conversion -Wno-sign-compare)
+    set(warning_flags -Wall -Wextra)# -Wconversion -Wsign-conversion -Wno-sign-compare)
   else()
     set(warning_flags -Werror=all -Werror=extra -Werror=conversion -Werror=sign-conversion -Wno-sign-compare)
   endif()
