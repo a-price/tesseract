@@ -119,7 +119,7 @@ tesseract_common::StatusCode::Ptr parseURDFString(tesseract_scene_graph::SceneGr
           URDFStatusCategory::ErrorAddingJointToSceneGraph, status_cat, status);
   }
 
-  if (sg->getJoints().empty())
+  if (sg->getJoints().empty() && sg->getLinks().size() > 1)
     return std::make_shared<tesseract_common::StatusCode>(URDFStatusCategory::ErrorNoJoints, status_cat);
 
   if (!sg->isTree())

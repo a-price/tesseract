@@ -361,6 +361,8 @@ std::vector<Joint::ConstPtr> SceneGraph::getOutboundJoints(const std::string& li
 
 bool SceneGraph::isAcyclic() const
 {
+  if (link_map_.size() < 2) { return true; }
+
   const auto& graph = static_cast<const Graph&>(*this);
   bool acyclic = true;
 
@@ -379,6 +381,8 @@ bool SceneGraph::isAcyclic() const
 
 bool SceneGraph::isTree() const
 {
+  if (link_map_.size() < 2) { return true; }
+
   const auto& graph = static_cast<const Graph&>(*this);
   bool tree = true;
 
